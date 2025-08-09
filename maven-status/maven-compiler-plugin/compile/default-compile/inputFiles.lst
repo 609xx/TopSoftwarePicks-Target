@@ -1,0 +1,11 @@
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/controller/MainController.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/repository/ApiKeyRepository.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/service/SoftwareArticleService.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/TopSoftwarePicksApplication.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/model/ApiKey.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/dto/SoftwareArticlePreviewDTO.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/repository/SoftwareArticleRepository.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/security/ApiKeyInterceptor.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/WebConfig.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/model/SoftwareArticle.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/service/ApiKeyService.java

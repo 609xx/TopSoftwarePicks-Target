@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #ffffff;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle span {
+    width: 24px;
+    height: 3px;
+    background: #374151;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+    background: #2563eb;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: -0.025em;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-content {
+    padding: 6rem 1.5rem 2rem;
+}
+
+.sidebar h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+.search-container {
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.article-item {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    background: #f9fafb;
+}
+
+.article-item:hover {
+    background: #eff6ff;
+    border-color: #dbeafe;
+    transform: translateX(4px);
+}
+
+.article-item.active {
+    background: #dbeafe;
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+.article-item h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.article-item p {
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+}
+
+/* Software Hero */
+.software-hero {
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 3rem;
+}
+
+.software-logo-container {
+    display: inline-block;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.software-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* Article */
+.article {
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 3rem;
+}
+
+.article h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #111827;
+}
+
+.article h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 2.5rem 0 1rem;
+    color: #1f2937;
+}
+
+.article h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: #374151;
+}
+
+.article p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+}
+
+.article ul, .article ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+}
+
+.article li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.article blockquote {
+    border-left: 4px solid #2563eb;
+    background: #f8fafc;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.article blockquote p {
+    font-style: italic;
+    color: #1e40af;
+    margin: 0;
+}
+
+/* Bottom Software */
+.bottom-software {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 4rem;
+}
+
+.software-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.software-info:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+}
+
+.bottom-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.software-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.sticky-cta.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 0 rgba(37, 99, 235, 0.5);
+}
+
+/* Affiliate Box */
+.affiliate-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 4rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.affiliate-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    transition: left 0.5s;
+}
+
+.affiliate-box:hover::before {
+    left: 100%;
+}
+
+.affiliate-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #2563eb;
+}
+
+.affiliate-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.affiliate-logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.affiliate-info {
+    flex: 1;
+}
+
+.affiliate-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.affiliate-benefits {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.affiliate-cta {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.affiliate-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .main-content {
+        padding: 0 1rem;
+        margin-top: 4rem;
+    }
+
+    .software-hero {
+        padding: 2rem 0;
+    }
+
+    .software-logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .article h1 {
+        font-size: 2rem;
+    }
+
+    .article h2 {
+        font-size: 1.5rem;
+    }
+
+    .article p, .article li {
+        font-size: 1rem;
+    }
+
+    .affiliate-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .sticky-cta {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .sidebar {
+        width: 280px;
+        left: -280px;
+    }
+
+    .sidebar-content {
+        padding: 5rem 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .software-logo-container {
+        padding: 1.5rem;
+    }
+
+    .article h1 {
+        font-size: 1.75rem;
+    }
+
+    .affiliate-box {
+        padding: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align all items to the left */
+    padding: 10px 20px;
+    gap: 16px; /* Adds spacing between menu and logo */
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Hamburger lines */
+.menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+}
+
+.site-logo {
+    max-width: 240px;  /* Previously 180px — increase this */
+    height: auto;
+    display: block;
+}
+/* Loading overlay styles */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Or your background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Make sure it's above everything */
+}
+
+/* Spinner animation */
+.spinner {
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

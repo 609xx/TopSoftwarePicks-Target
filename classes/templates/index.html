@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSoftwarePicks.com - Best Software Recommendations</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="TopSoftwarePicks Logo" class="site-logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Loading Screen -->
+    <div id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <h3>Browse Articles</h3>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search articles..." class="search-input">
+            </div>
+            <div class="article-list" id="articleList">
+                <!-- Articles will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Software Logo Section -->
+        <section class="software-hero">
+            <div class="software-logo-container">
+                <img id="softwareLogo" src="" alt="Software Logo" class="software-logo">
+            </div>
+        </section>
+
+        <!-- Article Content -->
+        <article class="article" id="articleContent">
+            <!-- Article content will be populated by JavaScript -->
+        </article>
+
+        <!-- Bottom Software Section -->
+        <section class="bottom-software">
+            <div class="software-info">
+                <img id="bottomSoftwareLogo" src="" alt="Software Logo" class="bottom-logo">
+                <h3 id="bottomSoftwareName" class="software-name"></h3>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky CTA Button -->
+    <div class="sticky-cta" id="stickyCta">
+        <button class="cta-button" id="stickyCtatButton">
+            <span id="ctaText">Try Now</span>
+        </button>
+    </div>
+
+    <!-- Bottom Affiliate Box -->
+    <section class="affiliate-box" id="affiliateBox">
+        <div class="affiliate-content">
+            <div class="affiliate-logo">
+                <img id="affiliateLogo" src="" alt="Software Logo">
+            </div>
+            <div class="affiliate-info">
+                <h4 id="affiliateName" class="affiliate-title"></h4>
+                <p id="affiliateBenefits" class="affiliate-benefits"></p>
+                <button class="affiliate-cta" id="affiliateCtaButton">
+                    <span>Get Started Now</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="/script.js"></script>
+</body>
+</html>

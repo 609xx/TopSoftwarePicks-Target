@@ -1,0 +1,11 @@
+com/topsoftwarepicks/security/ApiKeyInterceptor.class
+com/topsoftwarepicks/service/SoftwareArticleService.class
+com/topsoftwarepicks/service/ApiKeyService.class
+com/topsoftwarepicks/model/SoftwareArticle.class
+com/topsoftwarepicks/TopSoftwarePicksApplication.class
+com/topsoftwarepicks/repository/ApiKeyRepository.class
+com/topsoftwarepicks/model/ApiKey.class
+com/topsoftwarepicks/dto/SoftwareArticlePreviewDTO.class
+com/topsoftwarepicks/repository/SoftwareArticleRepository.class
+com/topsoftwarepicks/controller/MainController.class
+com/topsoftwarepicks/WebConfig.class

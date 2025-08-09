@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Software Picks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+          --primary: #1e2a38;
+          --accent: #3b82f6;
+          --bg: #f9fafb;
+          --white: #ffffff;
+          --text: #1f2937;
+          --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          font-family: 'Inter', sans-serif;
+          background-color: var(--bg);
+          color: var(--text);
+        }
+
+        header {
+          display: flex;
+          align-items: center;
+          padding: 16px 24px;
+          background: var(--primary);
+          color: var(--white);
+          position: relative;
+        }
+
+        .site-logo {
+          height: 40px;
+          margin-right: auto;
+        }
+
+        .software-logo {
+          height: 50px;
+        }
+
+        .toggle-btn {
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          font-size: 24px;
+          background: var(--accent);
+          color: var(--white);
+          border: none;
+          border-radius: 6px;
+          padding: 8px 12px;
+          cursor: pointer;
+          z-index: 1100;
+          box-shadow: var(--shadow);
+        }
+
+        .sidebar {
+          position: fixed;
+          top: 0;
+          left: -300px;
+          width: 280px;
+          height: 100%;
+          background-color: var(--white);
+          box-shadow: var(--shadow);
+          padding: 20px;
+          transition: left 0.3s ease;
+          z-index: 1050;
+          overflow-y: auto;
+        }
+
+        .sidebar.open {
+          left: 0;
+        }
+
+        .close-btn {
+          font-size: 22px;
+          cursor: pointer;
+          color: #888;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+        }
+
+        #searchInput {
+          width: 100%;
+          padding: 10px;
+          margin: 20px 0;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+        }
+
+        #articleList a {
+          display: block;
+          color: var(--primary);
+          text-decoration: none;
+          margin-bottom: 12px;
+          font-weight: 500;
+        }
+
+        #articleList a:hover {
+          color: var(--accent);
+          text-decoration: underline;
+        }
+
+        .article-container {
+          max-width: 800px;
+          margin: 32px auto;
+          padding: 24px;
+          background: var(--white);
+          border-radius: 10px;
+          box-shadow: var(--shadow);
+        }
+
+        .footer {
+          margin: 40px auto;
+          max-width: 800px;
+          text-align: center;
+          padding: 24px;
+        }
+
+        .footer a {
+          display: inline-flex;
+          align-items: center;
+          text-decoration: none;
+          color: var(--accent);
+          font-weight: 600;
+        }
+
+        .footer img {
+          height: 40px;
+          margin-right: 10px;
+        }
+
+        @media (max-width: 600px) {
+          .article-container {
+            margin: 16px;
+            padding: 20px;
+          }
+
+          .sidebar {
+            width: 240px;
+          }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+          const sidebar = document.getElementById('sidebar');
+          sidebar.classList.toggle('open');
+        }
+
+        function closeMenu() {
+          document.getElementById('sidebar').classList.remove('open');
+        }
+
+        function searchArticles() {
+          const keyword = document.getElementById("searchInput").value;
+          fetch(`/search?keyword=${keyword}`)
+            .then(res => res.json())
+            .then(data => {
+              const list = document.getElementById("articleList");
+              list.innerHTML = "";
+              data.forEach(article => {
+                const item = document.createElement("div");
+                item.innerHTML = `<a href="/article/${article.id}">${article.softwareName}</a>`;
+                list.appendChild(item);
+              });
+            });
+        }
+    </script>
+</head>
+
+<body>
+<!-- Sidebar toggle -->
+<button class="toggle-btn" onclick="toggleMenu()">☰</button>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="closeMenu()">×</div>
+    <input id="searchInput" type="text" placeholder="Search articles..." onkeyup="searchArticles()" />
+    <div id="articleList">
+        <div th:each="a : ${articles}">
+            <a th:href="@{'/article/' + ${a.id}}" th:text="${a.softwareName}"></a>
+        </div>
+    </div>
+</aside>
+
+<!-- Header -->
+<header>
+    <img src="/assets/logo.svg" alt="Site Logo" class="site-logo" />
+    <img th:src="@{${article.logoPath}}" alt="Software Logo" class="software-logo" />
+</header>
+
+<!-- Article Content -->
+<main class="article-container" th:utext="${article.articleContent}">
+    <!-- Content injected from DB -->
+</main>
+
+<!-- Footer with affiliate link -->
+<footer class="footer" th:if="${article != null}">
+    <a th:href="${article.affiliateLink}">
+        <img th:src="@{${article.logoPath}}" alt="Software Logo" />
+        <span th:text="${article.softwareName}"></span>
+    </a>
+</footer>
+</body>
+</html>

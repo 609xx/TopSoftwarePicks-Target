@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h1>Submit New Article</h1>
+    <form action="/submit" method="post" enctype="multipart/form-data" th:object="${article}">
+        <label>Software Name: <input type="text" th:field="*{softwareName}" /></label><br/>
+        <label>Website Name: <input type="text" th:field="*{websiteName}" /></label><br/>
+        <label>Affiliate Link: <input type="text" th:field="*{affiliateLink}" /></label><br/>
+        <label>Category: <input type="text" th:field="*{category}" /></label><br/>
+        <label>Publish Date: <input type="date" th:field="*{publishDate}" /></label><br/>
+        <label>Tags (comma separated): <input type="text" th:field="*{tags}" /></label><br/>
+        <label>Article Content: <textarea th:field="*{articleContent}" rows="10" cols="50"></textarea></label><br/>
+        <label>Logo Upload: <input type="file" name="logoFile" /></label><br/>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
