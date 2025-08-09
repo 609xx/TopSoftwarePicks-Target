@@ -178,7 +178,7 @@ function updateArticleDisplay(article) {
 
     currentSoftware = {
         name: article.software_name || article.websiteName,
-        logo: article.logoPath || 'default-logo.png',
+        logo: article.logo_path || 'default-logo.png',
         affiliateUrl: article.website_link,
         benefits: article.excerpt || article.excerptSlug || ''
     };
