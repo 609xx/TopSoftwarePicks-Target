@@ -5,6 +5,7 @@
 /home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/model/ApiKey.java
 /home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/dto/SoftwareArticlePreviewDTO.java
 /home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/repository/SoftwareArticleRepository.java
+/home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/logging/ProfileLogger.java
 /home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/security/ApiKeyInterceptor.java
 /home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/WebConfig.java
 /home/x/E/IdeaProjects/TopSoftwarePicks/src/main/java/com/topsoftwarepicks/model/SoftwareArticle.java
