@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /admin/
 Allow: /
-Sitemap: https://topsoftwarepicks.com/sitemap.xml
+Sitemap: https://www.topsoftwarepicks.com/sitemap.xml
